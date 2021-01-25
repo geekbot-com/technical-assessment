@@ -1,9 +1,9 @@
 FROM alpine:3.11
 
 # Install packages
-RUN apk update && apk add --no-cache curl gnupg php7 php7-pdo php7-fpm php7-json php7-openssl php7-curl \ 
-        php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring php7-gd \
-        php7-tokenizer php7-xmlwriter nginx supervisor composer ca-certificates && update-ca-certificates 
+RUN apk update && apk add --no-cache curl gnupg php7 php7-pdo php7-pdo_mysql php7-fpm php7-json php7-openssl \
+        php7-curl php7-xml php7-phar php7-intl php7-dom php7-xmlreader php7-ctype php7-session php7-mbstring \
+        php7-gd php7-tokenizer php7-xmlwriter nginx supervisor composer ca-certificates && update-ca-certificates 
            
 # Configure nginx
 COPY docker/nginx.conf /etc/nginx/nginx.conf

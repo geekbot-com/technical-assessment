@@ -29,6 +29,11 @@ services:
     restart: always
     build:
       context: ./backend
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_DATABASE: geekbot_exam
+      MYSQL_USER: geekbot_exam
+      MYSQL_PASSWORD: geekbot_exam
     volumes:
       - ./backend/app:/app/app
       - ./backend/public:/app/public
