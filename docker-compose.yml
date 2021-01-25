@@ -1,0 +1,47 @@
+version: "3.7"
+
+services:
+
+  mysql:
+    restart: always
+    image: mysql:5.7
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: geekbot_exam
+      MYSQL_DATABASE: geekbot_exam
+      MYSQL_USER: geekbot_exam
+      MYSQL_PASSWORD: geekbot_exam
+    ports:
+      - "3306:3306"
+
+  nginx:
+    restart: always
+    build:
+      context: ./nginx
+    depends_on:
+    - backend
+    - frontend
+    ports:
+      - '3080:80'
+
+  backend:
+    restart: always
+    build:
+      context: ./backend
+    volumes:
+      - ./backend/app:/app/app
+      - ./backend/public:/app/public
+      - ./backend/src:/app/src
+      - ./backend/tests:/app/tests
+      
+  frontend:
+    restart: always
+    stdin_open: true
+    build:
+      context: ./frontend
+    volumes:
+      - ./frontend/src:/app/src
+
+volumes:
+  mysql_data:
