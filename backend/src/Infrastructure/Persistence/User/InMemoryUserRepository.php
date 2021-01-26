@@ -44,7 +44,7 @@ class InMemoryUserRepository implements UserRepository
      */
     public function findUserOfId(int $id): User
     {
-        if (!isset($this->users[$id])) {
+        if (isset($this->users[$id])) {
             throw new UserNotFoundException();
         }
 
