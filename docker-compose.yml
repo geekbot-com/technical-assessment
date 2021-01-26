@@ -35,6 +35,7 @@ services:
       MYSQL_DATABASE: geekbot_exam
       MYSQL_USER: geekbot_exam
       MYSQL_PASSWORD: geekbot_exam
+      XDEBUG_CONFIG: "remote_host=host.docker.internal remote_port=9000 remote_enable=1"
     volumes:
       - ./backend/app:/app/app
       - ./backend/public:/app/public
