@@ -21,12 +21,12 @@ In the project directory, you can run:
 
 ### Tasks
 
-- [ ] Static content to dynamic: http://exam.geekbot.com
-- [X] Found the bug
-- [ ] Oauth slackkbot intergration: https://api.slack.com/authentication/basics
-- [ ] Display slack api: 
-- [ ] Unit test
-- [ ] Caching
-- [ ] Realtime (Nodejs or Phoenix)
+- [X] Static content to dynamic: http://exam.geekbot.com/landing-page
+- [X] Found the bug: http://exam.geekbot.com/api/users/ 
+- [X] Oauth slackkbot intergration: https://api.slack.com/authentication/basics
+- [X] Display slack api: http://exam.geekbot.com/profile-page https://api.slack.com/methods/users.profile.get 
+- [ ] Unit test: 
+- [X] Caching: 
+- [X] Realtime (Nodejs or Phoenix)
 - [X] CTF 
 - [X] Security
