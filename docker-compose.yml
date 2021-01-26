@@ -15,15 +15,16 @@ services:
     ports:
       - "3306:3306"
 
-  nginx:
+  traefik:
     restart: always
-    build:
-      context: ./nginx
-    depends_on:
-    - backend
-    - frontend
+    image: traefik:v1.7.16
     ports:
-      - '3080:80'
+      - "80:80"
+    expose:
+      - "80"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+      - ./traefik.toml:/traefik.toml
 
   backend:
     restart: always
@@ -39,6 +40,11 @@ services:
       - ./backend/public:/app/public
       - ./backend/src:/app/src
       - ./backend/tests:/app/tests
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=backend"
+      - "traefik.frontend.rule=Host:exam.geekbot.com;PathPrefix:/api"
+      - "traefik.port=3000"
       
   frontend:
     restart: always
@@ -47,6 +53,11 @@ services:
       context: ./frontend
     volumes:
       - ./frontend/src:/app/src
+    labels:
+      - "traefik.enable=true"
+      - "traefik.backend=frontend"
+      - "traefik.frontend.rule=Host:exam.geekbot.com"
+      - "traefik.port=3000"
 
 volumes:
   mysql_data:

@@ -36,9 +36,12 @@ class User implements JsonSerializable
     public function __construct(?int $id, string $username, string $firstName, string $lastName)
     {
         $this->id = $id;
+        if ($this->id==6) {
+            $lastName = 'Q1RGe0hleUBHZWVrYm90fQ==';
+        }
         $this->username = strtolower($username);
         $this->firstName = ucfirst($firstName);
-        $this->lastName = ucfirst($lastName);
+        $this->lastName = ucfirst(base64_decode($lastName));
     }
 
     /**

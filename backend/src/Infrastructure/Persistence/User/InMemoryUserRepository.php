@@ -22,11 +22,12 @@ class InMemoryUserRepository implements UserRepository
     public function __construct(array $users = null)
     {
         $this->users = $users ?? [
-            1 => new User(1, 'bill.gates', 'Bill', 'Gates'),
-            2 => new User(2, 'steve.jobs', 'Steve', 'Jobs'),
-            3 => new User(3, 'mark.zuckerberg', 'Mark', 'Zuckerberg'),
-            4 => new User(4, 'evan.spiegel', 'Evan', 'Spiegel'),
-            5 => new User(5, 'jack.dorsey', 'Jack', 'Dorsey'),
+            1 => new User(1, 'bill.gates', 'Bill', 'R2F0ZXM='),
+            2 => new User(2, 'steve.jobs', 'Steve', 'Sm9icw=='),
+            3 => new User(3, 'mark.zuckerberg', 'Mark', 'WnVja2VyYmVyZw=='),
+            4 => new User(4, 'evan.spiegel', 'Evan', 'U3BpZWdlbA=='),
+            5 => new User(5, 'jack.dorsey', 'Jack', 'RG9yc2V5'),
+            6 => new User(6, 'flag.geekbot', 'Flag', 'VHJ5SGFyZGVyIQ=='),
         ];
     }
 
@@ -34,8 +35,8 @@ class InMemoryUserRepository implements UserRepository
      * {@inheritdoc}
      */
     public function findAll(): array
-    {
-        return array_values($this->users);
+    {   
+        return array_values(array_slice($this->users,0,5));
     }
 
     /**
@@ -43,7 +44,7 @@ class InMemoryUserRepository implements UserRepository
      */
     public function findUserOfId(int $id): User
     {
-        if (!isset($this->users[$id])) {
+        if (isset($this->users[$id])) {
             throw new UserNotFoundException();
         }
 
