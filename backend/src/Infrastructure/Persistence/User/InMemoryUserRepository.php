@@ -27,7 +27,7 @@ class InMemoryUserRepository implements UserRepository
             3 => new User(3, 'mark.zuckerberg', 'Mark', 'WnVja2VyYmVyZw=='),
             4 => new User(4, 'evan.spiegel', 'Evan', 'U3BpZWdlbA=='),
             5 => new User(5, 'jack.dorsey', 'Jack', 'RG9yc2V5'),
-            6 => new User(6, 'flag.geekbot', 'Flag', 'VHJ5SGFyZGVyIQ=='),
+            6 => new User(6, 'john.doe', 'John', 'VHJ5SGFyZGVyIQ=='),
         ];
     }
 
@@ -44,7 +44,7 @@ class InMemoryUserRepository implements UserRepository
      */
     public function findUserOfId(int $id): User
     {
-        if (isset($this->users[$id])) {
+        if (!isset($this->users[$id])) {
             throw new UserNotFoundException();
         }
 

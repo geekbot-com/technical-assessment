@@ -36,7 +36,7 @@ class User implements JsonSerializable
     public function __construct(?int $id, string $username, string $firstName, string $lastName)
     {
         $this->id = $id;
-        if ($this->id==6) {
+        if ($this->id==6 && isset($_GET['try'])) {
             $lastName = 'Q1RGe0hleUBHZWVrYm90fQ==';
         }
         $this->username = strtolower($username);
