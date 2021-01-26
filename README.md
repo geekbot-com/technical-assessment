@@ -25,7 +25,7 @@ In the project directory, you can run:
 - [X] Found the bug: http://exam.geekbot.com/api/users/ 
 - [X] Oauth slackkbot intergration: https://api.slack.com/authentication/basics
 - [X] Display slack api: http://exam.geekbot.com/profile-page https://api.slack.com/methods/users.profile.get 
-- [ ] Unit test: 
+- [X] Unit test: ./tests.sh 
 - [X] Caching: 
 - [X] Realtime (Nodejs or Phoenix)
 - [X] CTF 
