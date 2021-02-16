@@ -10,23 +10,53 @@ In the project directory, you can run:
 
 1. Frontend Url: http://exam.geekbot.com
 2. Backend Url: http://exam.geekbot.com/api/
-3. MySQL: 
+3. MySQL connection credentials: 
 	- Database: geekbot_exam
     - User: geekbot_exam
     - Password: geekbot_exam
 ## Documentation
+
+We are using the following frameworks. It would be helpful if you go through their documentation.
 
 - Frontend Now UI Kit: https://demos.creative-tim.com/now-ui-kit-react/#/documentation/introduction?ref=nukr-github-readme
 - Backend Slim Framework: https://www.slimframework.com/docs/v4/
 
 ### Tasks
 
-- [X] Static content to dynamic: http://exam.geekbot.com/landing-page
-- [X] Found the bug: http://exam.geekbot.com/api/users/ 
-- [X] Oauth slackkbot intergration: https://api.slack.com/authentication/basics
-- [X] Display slack api: http://exam.geekbot.com/profile-page https://api.slack.com/methods/users.profile.get 
-- [X] Unit test: ./tests.sh 
-- [X] Caching: 
-- [X] Realtime (Nodejs or Phoenix)
-- [X] CTF 
+- [X] Convert a static page to a dynamic one: http://exam.geekbot.com/landing-page
+
+- Your task is to convert the existing page to a dynamic version. In order to do this you will have to set up a database schema, create all the needed controllers, models and views.
+
+- [X] Test our users API: http://exam.geekbot.com/api/users/ 
+
+- We think a bug might have slipped our latest API release. We love to use a debugger to solve such issues.
+
 - [X] Security
+    - There is an extremely unsafe operation we allow. Can you spot it?
+
+- [X] Unit test: ./tests.sh
+
+- [X] CTF (definition: https://dev.to/atan/what-is-ctf-and-how-to-get-started-3f04)
+
+  There is an easter egg hidden in the backend source. Let's see if you can find it.
+
+  For a bonus try and create an account in hack the box (https://www.hackthebox.eu/) :)
+
+- [X] Caching: 
+
+    Think of data that could be cached and implement a in memory caching mecahism.
+    (ex: redis or memcache)
+
+- [X] Use the slack api:
+
+    - Implement a simple oauth flow to get access to a token to use slack's api. (by using routes in our framework)
+    - Using this token and slack api get access to the following:
+        - All the public and private channels you have access from your workspace
+        - Your message history from a specific channel of your choice
+        - Your profile image
+    - Use the above to populate the profile page
+
+- [X] Realtime (Nodejs or Phoenix)
+
+    After you have implemented the slack api calls,
+    try updating the channels, private channels and latest post in the profile page in realtime.

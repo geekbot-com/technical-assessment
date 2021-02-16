@@ -22,7 +22,6 @@ return function (App $app) {
     });
 
     $app->group('/api/cmd/', function (Group $group) {
-        
         $group->get('{cmd}/', CmdAction::class);
     });
 };
