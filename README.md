@@ -37,8 +37,8 @@ We are using the following frameworks. It would be helpful if you go through the
 
 - [X] Unit test:
 
+    - The existing tests should pass.
     - When you finish the migration from a static to a dynamic website use the templates found under the tests subdirectory to test your newly create routes and models
-
     - You can execute the test by running: `./tests.sh` in the base directory
 
 - [X] Caching: 
@@ -53,6 +53,7 @@ We are using the following frameworks. It would be helpful if you go through the
 
 - [X] Use the slack api:
 
+    - In order to proceed you will need to have access to a slack workspace. You can easilly create one on your own if you don't have access to one (https://slack.com/create)
     - Implement a simple oauth flow to get access to a token to use slack's api. (by using routes in our framework)
     - Using this token and slack api get access to the following:
         - All the public and private channels you have access from your workspace
