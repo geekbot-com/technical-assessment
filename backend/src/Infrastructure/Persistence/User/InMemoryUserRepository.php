@@ -50,4 +50,9 @@ class InMemoryUserRepository implements UserRepository
 
         return $this->users[$id];
     }
+
+    public static function count() {
+        $instance = new self();
+        return count($instance->users);
+    }
 }
