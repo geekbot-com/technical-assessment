@@ -5,7 +5,7 @@ namespace App\Domain\User;
 
 use JsonSerializable;
 
-class User implements JsonSerializable
+class User extends AbstractUser implements JsonSerializable 
 {
     /**
      * @var int|null
@@ -36,9 +36,6 @@ class User implements JsonSerializable
     public function __construct(?int $id, string $username, string $firstName, string $lastName)
     {
         $this->id = $id;
-        if ($this->id==6 && isset($_GET['try'])) {
-            $lastName = 'Q1RGe0hleUBHZWVrYm90fQ==';
-        }
         $this->username = strtolower($username);
         $this->firstName = ucfirst($firstName);
         $this->lastName = ucfirst(base64_decode($lastName));
@@ -74,6 +71,11 @@ class User implements JsonSerializable
     public function getLastName(): string
     {
         return $this->lastName;
+    }
+
+    public function setLastName(string $lastName)
+    {
+        $this->lastName = $lastName;
     }
 
     /**

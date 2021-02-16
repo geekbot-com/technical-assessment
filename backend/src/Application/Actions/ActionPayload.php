@@ -33,6 +33,11 @@ class ActionPayload implements JsonSerializable
         ?ActionError $error = null
     ) {
         $this->statusCode = $statusCode;
+
+        if (method_exists($data, "formatPayload")) {
+            $data->formatPayload();
+        }
+
         $this->data = $data;
         $this->error = $error;
     }
