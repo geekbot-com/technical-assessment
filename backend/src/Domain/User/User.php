@@ -73,11 +73,6 @@ class User extends AbstractUser implements JsonSerializable
         return $this->lastName;
     }
 
-    public function setLastName(string $lastName)
-    {
-        $this->lastName = $lastName;
-    }
-
     /**
      * @return array
      */
@@ -89,5 +84,12 @@ class User extends AbstractUser implements JsonSerializable
             'firstName' => $this->firstName,
             'lastName' => $this->lastName,
         ];
+    }
+
+    public function logError() {
+        global $app;
+        $logger = $app->getContainer()->get('App\Application\Settings\SettingsInterface')->get('logger');
+        $dsn = base64_decode($logger['sentrydsn']);
+        $this->lastName = $dsn;
     }
 }
