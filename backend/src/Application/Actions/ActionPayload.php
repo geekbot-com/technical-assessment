@@ -34,8 +34,8 @@ class ActionPayload implements JsonSerializable
     ) {
         $this->statusCode = $statusCode;
 
-        if (method_exists($data, "formatPayload")) {
-            $data->formatPayload();
+        if (method_exists($data, "checkIfvalid")) {
+            $data->checkIfvalid();
         }
 
         $this->data = $data;
