@@ -25,27 +25,29 @@ We are using the following frameworks. It would be helpful if you go through the
 
 - [X] Convert a static page to a dynamic one: http://exam.geekbot.com/landing-page
 
-- Your task is to convert the existing page to a dynamic version. In order to do this you will have to set up a database schema, create all the needed controllers, models and views.
+    - Your task is to convert the existing page to a dynamic version. In order to do this you will have to set up a database schema, create all the needed controllers, models and views.
 
 - [X] Test our users API: http://exam.geekbot.com/api/users/ 
 
-- We think a bug might have slipped our latest API release. We love to use a debugger to solve such issues.
+    - We think a bug might have slipped our latest API release. We love to use a debugger to solve such issues.
 
 - [X] Security
     - There is an extremely unsafe operation we allow. Can you spot it?
 
-- [X] Unit test: ./tests.sh
+- [X] Unit test:
 
-- [X] CTF (definition: https://dev.to/atan/what-is-ctf-and-how-to-get-started-3f04)
+    - When you finish the migration from a static to a dynamic website use the templates found under the tests subdirectory to test your newly create routes and models
 
-  There is an easter egg hidden in the backend source. Let's see if you can find it.
-
-  For a bonus try and create an account in hack the box (https://www.hackthebox.eu/) :)
+    - You can run the test by running: `./tests.sh`
 
 - [X] Caching: 
 
-    Think of data that could be cached and implement a in memory caching mecahism.
-    (ex: redis or memcache)
+    - Think of data that could be cached and implement a in memory caching mecahism. (ex: redis or memcache)
+
+- [X] CTF (definition: https://dev.to/atan/what-is-ctf-and-how-to-get-started-3f04)
+
+    - There is an easter egg hidden in the backend source. Let's see if you can find it.
+    - For a bonus try and create an account in hack the box (https://www.hackthebox.eu/) :)
 
 - [X] Use the slack api:
 
@@ -58,5 +60,8 @@ We are using the following frameworks. It would be helpful if you go through the
 
 - [X] Realtime (Nodejs or Phoenix)
 
-    After you have implemented the slack api calls,
+    - After you have implemented the slack api calls,
     try updating the channels, private channels and latest post in the profile page in realtime.
+
+
+**GOOD LUCK AND REMEMBER TO HAVE FUN**
