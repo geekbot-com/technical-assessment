@@ -39,7 +39,7 @@ We are using the following frameworks. It would be helpful if you go through the
 
     - When you finish the migration from a static to a dynamic website use the templates found under the tests subdirectory to test your newly create routes and models
 
-    - You can run the test by running: `./tests.sh`
+    - You can execute the test by running: `./tests.sh` in the base directory
 
 - [X] Caching: 
 
