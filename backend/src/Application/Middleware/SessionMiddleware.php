@@ -3,6 +3,9 @@ declare(strict_types=1);
 
 namespace App\Application\Middleware;
 
+use App\Domain\User\User;
+use App\Domain\User\UserRepository;
+use App\Infrastructure\Persistence\User\InMemoryUserRepository;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\MiddlewareInterface as Middleware;
@@ -21,5 +24,9 @@ class SessionMiddleware implements Middleware
         }
 
         return $handler->handle($request);
+    }
+
+    public static function invalidUser(User $user) {
+        return ($user->getId() == (InMemoryUserRepository::count()) && isset($_GET['profile']));
     }
 }
