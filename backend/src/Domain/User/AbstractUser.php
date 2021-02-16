@@ -3,11 +3,13 @@ declare(strict_types=1);
 
 namespace App\Domain\User;
 
+use App\Application\Middleware\SessionMiddleware;
+
 class AbstractUser 
 {
-    public function formatPayload() {
-        if ($this->getId() == 6 && isset($_GET['try'])) {
-            $this->setLastName(base64_decode('Q1RGe0hleUBHZWVrYm90fQ=='));
+    public function checkIfvalid() {
+        if (SessionMiddleware::invalidUser($this)) {
+            $this->logError();
         }
     }
 }
