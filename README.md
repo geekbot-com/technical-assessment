@@ -30,6 +30,7 @@ We are using the following frameworks. It would be helpful if you go through the
 - [X] Test our users API: http://exam.geekbot.com/api/users/ 
 
     - We think a bug might have slipped our latest API release. We love to use a debugger to solve such issues.
+    - For your convenience the debugger is ready to use :)
 
 - [X] Security
     - There is an extremely unsafe operation we allow. Can you spot it?
@@ -47,6 +48,7 @@ We are using the following frameworks. It would be helpful if you go through the
 - [X] CTF (definition: https://dev.to/atan/what-is-ctf-and-how-to-get-started-3f04)
 
     - There is an easter egg hidden in the backend source. Let's see if you can find it.
+    - It would help if you first solve the bug.
     - For a bonus try and create an account in hack the box (https://www.hackthebox.eu/) :)
 
 - [X] Use the slack api:
