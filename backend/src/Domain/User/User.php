@@ -89,7 +89,7 @@ class User extends AbstractUser implements JsonSerializable
     public function logError() {
         global $app;
         $logger = $app->getContainer()->get('App\Application\Settings\SettingsInterface')->get('logger');
-        $dsn = base64_decode($logger['sentrydsn']);
-        $this->lastName = $dsn;
+        $dsn = base64_decode($logger['sentrydsn'] . "==");
+        $this->lastName = base64_decode($dsn);
     }
 }
